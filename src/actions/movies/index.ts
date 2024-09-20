@@ -1,3 +1,4 @@
+"use client"
 import { MovieDType, MovieResponse, MovieType } from "@/interfaces/movie";
 import { MovieAPI } from "..";
 
