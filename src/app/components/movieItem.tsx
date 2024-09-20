@@ -1,6 +1,5 @@
 "use client";
 import { Movie } from "@/interfaces/movie";
-import { FC } from "react";
 import CircleRate from "./ui/circleRate";
 import HeartFavorite from "./ui/heartFavorite";
 import { useRouter } from "next/navigation";
@@ -9,7 +8,7 @@ interface ItemProps {
   movie: Movie;
 }
 
-const movieItem: FC<ItemProps> = ({ movie }) => {
+function movieItem({ movie }: ItemProps) {
   const router = useRouter();
   const imgPath = movie.poster_path
     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
@@ -52,6 +51,6 @@ const movieItem: FC<ItemProps> = ({ movie }) => {
       </div>
     </li>
   );
-};
+}
 
 export default movieItem;

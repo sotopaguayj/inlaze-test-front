@@ -9,7 +9,7 @@ export interface QParam {
   keyWord?: string;
 }
 
-export const getMovie = async (id: string) => {
+export const getMovie = async (id: string): Promise<any> => {
   const response = await MovieAPI.get("/movie/" + id);
   return response.data;
 };
@@ -52,7 +52,7 @@ export const getMovies = async ({
   }
 };
 
-export const getRecommendations = async (id: string) => {
+export const getRecommendations = async (id: string): Promise<any> => {
   // https://api.themoviedb.org/3/movie/917496/recommendations
   const response = await MovieAPI.get(
     `/movie/${id}/recommendations?include_adult=false`

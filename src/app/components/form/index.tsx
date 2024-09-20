@@ -1,12 +1,11 @@
-import { FC, useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "../ui/button";
-import Input from "../ui/input";
 import Login from "./login";
 import Register from "./register";
 import { Modaldata } from "./data";
 import { useModal } from "@/store/context";
 
-const Form: FC = () => {
+function Form() {
   const [option, setOption] = useState<"signin" | "login">("signin");
   const isLogin = option === "login";
   const handleOption = () => {
@@ -75,6 +74,6 @@ const Form: FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default Form;

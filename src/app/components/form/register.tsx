@@ -1,4 +1,3 @@
-import { FC } from "react";
 import Input from "../ui/input";
 import Button from "../ui/button";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -7,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { RegisterAction } from "@/actions/auth/sing";
 
-const Register: FC = () => {
+function Register() {
   const {
     register,
     handleSubmit,
@@ -57,6 +56,6 @@ const Register: FC = () => {
       )}
     </form>
   );
-};
+}
 
 export default Register;

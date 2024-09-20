@@ -1,10 +1,4 @@
-import { FC } from "react";
-
-interface MovieSkeletonProps {
-  key?: string;
-}
-
-const MovieSkeleton: FC<MovieSkeletonProps> = ({ key }) => {
+function MovieSkeleton() {
   return (
     <div>
       <div className="relative">
@@ -51,6 +45,6 @@ const MovieSkeleton: FC<MovieSkeletonProps> = ({ key }) => {
       </div>
     </div>
   );
-};
+}
 
 export default MovieSkeleton;

@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { FC, useState } from "react";
 import Form from "./form";
 import { useModal, useSession } from "@/store/context";
 import LogOut from "./logOut";
 
-const Header: FC = () => {
+function Header() {
   const { onClose, isOpen, onOpen } = useModal();
   const { isAuth } = useSession();
 
@@ -48,6 +47,6 @@ const Header: FC = () => {
       {!isAuth && <Form />}
     </header>
   );
-};
+}
 
 export default Header;

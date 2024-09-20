@@ -2,10 +2,9 @@
 import { getBanner } from "@/actions/movies";
 import { MovieResponse } from "@/interfaces/movie";
 import { useQuery } from "@tanstack/react-query";
-import { FC, useState } from "react";
 import BannerItem from "./item";
 
-const Banner: FC = () => {
+function Banner() {
   // const [slide, setSlide] = useState(0);
   const { data, isFetching } = useQuery<MovieResponse>({
     queryKey: ["banner"],
@@ -41,6 +40,6 @@ const Banner: FC = () => {
       </div> */}
     </div>
   );
-};
+}
 
 export default Banner;

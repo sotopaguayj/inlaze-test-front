@@ -1,6 +1,5 @@
 import { getRecommendations } from "@/actions/movies";
 import { useQuery } from "@tanstack/react-query";
-import { FC } from "react";
 import MovieItem from "./movieItem";
 import { MovieResponse } from "@/interfaces/movie";
 
@@ -8,8 +7,8 @@ interface RecommendProps {
   movieId: string;
 }
 
-const Recommend: FC<RecommendProps> = ({ movieId }) => {
-  const { data, isFetching } = useQuery<MovieResponse>({
+function Recommend({ movieId }: RecommendProps) {
+  const { data } = useQuery<MovieResponse>({
     queryKey: ["recommendations", movieId],
     queryFn: () => getRecommendations(movieId),
     refetchOnWindowFocus: false,
@@ -27,6 +26,6 @@ const Recommend: FC<RecommendProps> = ({ movieId }) => {
       </ul>
     </div>
   );
-};
+}
 
 export default Recommend;

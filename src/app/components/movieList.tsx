@@ -1,14 +1,8 @@
 "use client";
 import { getMovies, QParam } from "@/actions/movies";
-import {
-  Movie,
-  MovieDName,
-  MovieResponse,
-  MovieType,
-} from "@/interfaces/movie";
+import { MovieDName, MovieResponse, MovieType } from "@/interfaces/movie";
 import MovieItem from "./movieItem";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { FC } from "react";
 import { useFilters } from "@/store/context";
 import ListSkeleton from "./skeletons/listSkeleton";
 import Button from "./ui/button";
@@ -17,7 +11,7 @@ interface ListPros {
   type: MovieType;
 }
 
-const MovieList: FC<ListPros> = ({ type }) => {
+function MovieList({ type }: ListPros) {
   const { genre, keyWord } = useFilters();
   const { data, isFetching, isError, error, fetchNextPage, hasNextPage } =
     useInfiniteQuery<MovieResponse>({
@@ -53,11 +47,11 @@ const MovieList: FC<ListPros> = ({ type }) => {
   if (isError) return <p>Error: {error.message}</p>;
 
   return (
-    <div className="p-5 lg:mt-0 mt-10">
-      <h2 className="uppercase text-lg font-semibold mb-5">
+    <div className="p-5 mt-10 lg:mt-0">
+      <h2 className="mb-5 text-lg font-semibold uppercase">
         {MovieDName[type]}
       </h2>
-      <ul className="flex relative items-center pb-1 gap-10 w-full overflow-auto">
+      <ul className="relative flex items-center w-full gap-10 pb-1 overflow-auto">
         {data?.pages.flatMap((page) => (
           <div className="flex gap-5" key={page.page}>
             {page.results.map((mov) => (
@@ -68,13 +62,13 @@ const MovieList: FC<ListPros> = ({ type }) => {
         <Button
           disabled={!hasNextPage || isFetching}
           onClick={handleNext}
-          className="grid place-content-center hover:bg-white/20 h-full w-20 rounded text-xl p-5 cursor-pointer transition-colors"
+          className="grid w-20 h-full p-5 text-xl transition-colors rounded cursor-pointer place-content-center hover:bg-white/20"
         >
           {iconBtn}
         </Button>
       </ul>
     </div>
   );
-};
+}
 
 export default MovieList;

@@ -2,14 +2,13 @@
 import Input from "../ui/input";
 import Button from "../ui/button";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { FC } from "react";
 import { SingInDto, SingInDtoSchema } from "./dto";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginAction } from "@/actions/auth/sing";
 import { toast } from "sonner";
 import { useModal, useSession } from "@/store/context";
 
-const Login: FC = () => {
+function Login() {
   const {
     register,
     handleSubmit,
@@ -58,6 +57,6 @@ const Login: FC = () => {
       )}
     </form>
   );
-};
+}
 
 export default Login;

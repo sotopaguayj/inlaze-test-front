@@ -1,4 +1,4 @@
-import { FC } from "react";
+"use client"
 import Button from "./ui/button";
 import { useFavsMovies, useModal, useSession } from "@/store/context";
 import { toast } from "sonner";
@@ -8,7 +8,7 @@ interface LogOutProps {
   key?: string;
 }
 
-const LogOut: FC<LogOutProps> = ({ key }) => {
+function LogOut({ key }: LogOutProps) {
   const { onClose, isOpen } = useModal();
   const { logout, token } = useSession();
   const { setFavs } = useFavsMovies();
@@ -38,6 +38,6 @@ const LogOut: FC<LogOutProps> = ({ key }) => {
       </Button>
     </div>
   );
-};
+}
 
 export default LogOut;

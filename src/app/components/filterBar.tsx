@@ -1,11 +1,11 @@
 import { MoviesGenres } from "@/interfaces/movie";
 import { useFilters } from "@/store/context";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { FC, useState } from "react";
+import { useState } from "react";
 import Button from "./ui/button";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-const FilterBar: FC = () => {
+function FilterBar() {
   const { genre, changeGenre, keyWord, setKeyWord } = useFilters();
   const [isVisibe, setIsVisible] = useState(false);
 
@@ -104,6 +104,6 @@ const FilterBar: FC = () => {
       </div>
     </div>
   );
-};
+}
 
 export default FilterBar;

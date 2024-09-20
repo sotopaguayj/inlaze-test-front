@@ -1,5 +1,4 @@
 import { Movie } from "@/interfaces/movie";
-import { FC } from "react";
 import HeartFavorite from "../ui/heartFavorite";
 import CircleRate from "../ui/circleRate";
 import { useRouter } from "next/navigation";
@@ -8,7 +7,7 @@ interface BannerItemProps {
   movie: Movie;
 }
 
-const BannerItem: FC<BannerItemProps> = ({ movie }) => {
+function BannerItem({ movie }: BannerItemProps) {
   const router = useRouter();
   const imgPath = movie.poster_path
     ? `https://image.tmdb.org/t/p/original${movie.backdrop_path}`
@@ -41,6 +40,6 @@ const BannerItem: FC<BannerItemProps> = ({ movie }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
     </div>
   );
-};
+}
 
 export default BannerItem;
