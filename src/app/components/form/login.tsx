@@ -42,21 +42,20 @@ const Login: FC = () => {
   return (
     <form
       onSubmit={handleSubmit(handleLogin)}
-      className="flex flex-col w-full gap-5"
+      className="relative flex flex-col w-full gap-5"
     >
       <span className="text-sm text-center">We love having you back</span>
       <Input placeholder="Email" type="text" {...register("email")} />
-      {errors.email && (
-        <small className="text-red-500">{errors.email.message}</small>
-      )}
       <Input placeholder="Password" type="password" {...register("password")} />
-      {errors.password && (
-        <small className="text-red-500">{errors.password.message}</small>
-      )}
       <Button type="submit">
         <span>Continue</span>
         <span className="icon-[ph--ticket]" role="img" aria-hidden="true" />
       </Button>
+      {Object.values(errors).length > 0 && (
+        <small className="absolute z-50 w-full px-3 py-1 border-l-2 bg-rose-500/20 border-rose-500 -bottom-10">
+          {Object.values(errors)[0].message}
+        </small>
+      )}
     </form>
   );
 };

@@ -29,7 +29,12 @@ export const UpdateUserDtoSchema = SingUpDtoSchema.partial();
 export type SingUpDto = z.infer<typeof SingUpDtoSchema>;
 
 export const SingInDtoSchema = z.object({
-  email: z.string().email("Invalid email address"),
-  password: z.string().min(6, "Password must be at least 6 characters long"),
+  email: z
+    .string({ required_error: "El correo electrónico es obligatorio" })
+    .email("El correo electrónico debe ser válido"),
+
+  password: z
+    .string({ required_error: "La contraseña no puede estar vacía" })
+    .min(6, { message: "La contraseña debe tener al menos 6 caracteres" }),
 });
 export type SingInDto = z.infer<typeof SingInDtoSchema>;

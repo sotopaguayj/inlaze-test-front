@@ -21,7 +21,7 @@ const Form: FC = () => {
     <div
       className={`fixed inset-0 lg:inset-auto backdrop-blur-xl z-40 lg:max-w-[1320px] lg:h-[520px] lg:top-[80px] grid grid-rows-5 grid-cols-1 lg:grid-rows-1 lg:grid-cols-5 transition-transform rounded p-2 border border-white/20 ${modalClass}`}
     >
-      <div className="flex flex-col justify-between col-span-3 row-span-3 lg:row-span-1">
+      <div className="flex flex-col justify-between col-span-3 row-span-4 lg:row-span-1">
         <div className="flex flex-col gap-5">
           <div className="self-start p-2">
             <Button customType="ghost" onClick={onClose}>
@@ -49,15 +49,15 @@ const Form: FC = () => {
             </span>
           </div>
         </div>
-        <div className="w-[50%] self-center">
+        <div className="w-[90%] md:w-[75%] lg:w-[50%] self-center">
           {!isLogin && <Login />}
           {isLogin && <Register />}
         </div>
-        <small className="text-[10px] text-center mb-20">
+        <small className="text-[10px] text-center mb-2">
           For any question, reach out to support@popcornmovies.com
         </small>
       </div>
-      <div className="flex flex-col items-center justify-between col-span-2 row-span-2 rounded-r lg:row-span-1 bg-zinc-800">
+      <div className="flex flex-col items-center justify-between col-span-2 row-span-1 rounded-r lg:row-span-1 bg-zinc-800">
         <div className="flex flex-col items-center gap-5 p-5 pt-5 text-center">
           <h1 className="text-2xl font-semibold lg:text-4xl lg:font-bold">
             {data.title}
@@ -66,7 +66,7 @@ const Form: FC = () => {
         </div>
         <figure className="max-w-[547px] flex justify-center overflow-hidden">
           <img
-            className=" lg:w-[70%]"
+            className="hidden lg:block lg:w-[70%]"
             src={data.imageUrl}
             alt="illustration form"
             loading="lazy"

@@ -15,8 +15,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>): JSX.Element {
-  const { login } = useSession();
-  const { setFavs } = useFavsMovies();
+  const { login, token } = useSession();
+  const { setFavs, favs } = useFavsMovies();
 
   const getFavs = async (tkn) => {
     const x = await getFavourites(tkn);
@@ -29,7 +29,7 @@ export default function RootLayout({
       login(token);
       getFavs(token);
     }
-  }, []);
+  }, [ token]);
 
   return (
     <html lang="en">
