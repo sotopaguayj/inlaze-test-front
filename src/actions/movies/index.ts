@@ -1,4 +1,3 @@
-"use server";
 import { MovieDType, MovieResponse, MovieType } from "@/interfaces/movie";
 import { MovieAPI } from "..";
 

@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export const MovieAPI = axios.create({
-  baseURL: `${process.env.API_URL}`,
+  baseURL: `${process.env.NEXT_PUBLIC_API_URL}`,
   headers: {
-    Authorization: `Bearer ${process.env.API_TOKEN}`,
+    Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
   },
 });
 
