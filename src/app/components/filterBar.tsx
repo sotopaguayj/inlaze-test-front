@@ -1,3 +1,5 @@
+"use client"
+
 import { MoviesGenres } from "@/interfaces/movie";
 import { useFilters } from "@/store/context";
 import { useMutation, useQueryClient } from "@tanstack/react-query";

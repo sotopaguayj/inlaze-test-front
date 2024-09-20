@@ -1,3 +1,5 @@
+"use client"
+
 import Input from "../ui/input";
 import Button from "../ui/button";
 import { SubmitHandler, useForm } from "react-hook-form";

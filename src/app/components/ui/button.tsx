@@ -1,3 +1,5 @@
+"use client";
+
 import { ButtonHTMLAttributes, FC } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -7,9 +9,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button: FC<ButtonProps> = ({ customType, extraClass, ...props }) => {
   const buttonclasses = {
-    ghost:
-      "bg-transparent hover:bg-white/20 border-white active:bg-white/30",
-    outline: "bg-transparent border-rose-500 active:bg-rose-900/30 text-rose-500",
+    ghost: "bg-transparent hover:bg-white/20 border-white active:bg-white/30",
+    outline:
+      "bg-transparent border-rose-500 active:bg-rose-900/30 text-rose-500",
     solid: "bg-rose-500  active:bg-rose-600 text-zinc-900",
   };
   const buttonClass = buttonclasses[customType || "solid"];

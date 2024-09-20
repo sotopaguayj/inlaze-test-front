@@ -1,3 +1,5 @@
+"use client"
+
 import { getRecommendations } from "@/actions/movies";
 import { useQuery } from "@tanstack/react-query";
 import MovieItem from "./movieItem";

@@ -1,3 +1,5 @@
+"use client"
+
 import { ManageFavorite } from "@/actions/favorite/fav.action";
 import { useFavsMovies, useModal, useSession } from "@/store/context";
 import { FC } from "react";

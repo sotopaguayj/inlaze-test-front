@@ -1,3 +1,5 @@
+"use client"
+
 function ItemSkeleton() {
   return (
     <li className="grid-rows-5 overflow-hidden rounded bg-zinc-900 min-w-56 animate-pulse">

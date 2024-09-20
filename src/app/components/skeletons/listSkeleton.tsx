@@ -1,3 +1,5 @@
+"use client"
+
 import ItemSkeleton from "./itemSkeleton";
 
 function ListSkeleton() {

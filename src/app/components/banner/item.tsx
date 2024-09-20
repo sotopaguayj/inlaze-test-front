@@ -1,3 +1,5 @@
+"use client"
+
 import { Movie } from "@/interfaces/movie";
 import HeartFavorite from "../ui/heartFavorite";
 import CircleRate from "../ui/circleRate";

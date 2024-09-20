@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import Form from "./form";
 import { useModal, useSession } from "@/store/context";
