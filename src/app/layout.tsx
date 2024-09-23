@@ -6,6 +6,7 @@ import { Toaster } from "sonner";
 import { useEffect } from "react";
 import { useFavsMovies, useSession } from "@/store/context";
 import { getFavourites } from "@/actions/favorite/fav.action";
+import Header from "./components/header";
 
 const inter = Inter({ subsets: ["latin"] });
 const queryClient = new QueryClient();
@@ -29,16 +30,17 @@ export default function RootLayout({
       login(token);
       getFavs(token);
     }
-  }, [ token]);
+  }, [token]);
 
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <body className={inter.className}>
+          <Header />
           {children}
           <Toaster expand={true} position="top-right" theme="dark" />
-        </QueryClientProvider>
-      </body>
+        </body>
+      </QueryClientProvider>
     </html>
   );
 }

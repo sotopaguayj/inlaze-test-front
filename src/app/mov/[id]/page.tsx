@@ -31,8 +31,7 @@ export default function MovieDetail(): JSX.Element {
     ? `https://image.tmdb.org/t/p/original${data?.backdrop_path}`
     : "noimg.jpg";
   return (
-    <RootLayout>
-      <Header />
+    <>
       {isFetching && !data && <MovieSkeleton />}
       {isError && <div>Error: {error?.message}</div>}
       {data && !isFetching && (
@@ -115,6 +114,6 @@ export default function MovieDetail(): JSX.Element {
           <Recommend movieId={id} />
         </div>
       )}
-    </RootLayout>
+    </>
   );
 }
